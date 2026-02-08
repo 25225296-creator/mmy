@@ -1,0 +1,210 @@
+/* ====================================== */
+/* テーマカラー（あとで変えやすいよう変数化） */
+/* ====================================== */
+:root {
+  --pink: #ff9abb;            /* メインピンク */
+  --pink-light: #ffe4ee;      /* ほんのり淡いピンク */
+  --pink-dark: #ff7aa5;       /* ボタンやアクセント用 */
+  --text: #444;
+  --muted: #777;
+  --border: #f4bccc;
+  --white: #fff;
+  --shadow: rgba(255, 150, 180, 0.25);
+}
+
+/* ====================================== */
+/* ベース                                   */
+/* ====================================== */
+body {
+  font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: var(--pink-light);
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* 全体の余白と見やすさ */
+main, header, footer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ====================================== */
+/* ヘッダー                                 */
+/* ====================================== */
+.site-header {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 16px 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand h1 {
+  margin: 0;
+  color: var(--pink-dark);
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ナビ */
+.nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: var(--pink-dark);
+  font-weight: bold;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* ====================================== */
+/* ヒーロー（あいさつ部分）                 */
+/* ====================================== */
+.hero {
+  margin-top: 20px;
+  background: var(--white);
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: var(--pink-dark);
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ====================================== */
+/* セクション共通                           */
+/* ====================================== */
+.section {
+  background: var(--white);
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.section h2 {
+  margin-top: 0;
+  color: var(--pink-dark);
+}
+
+/* ====================================== */
+/* 自己紹介 2カラム                         */
+/* ====================================== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+.profile-box {
+  text-align: center;
+  background: var(--pink-light);
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.profile {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.small {
+  font-size: 12px;
+}
+.muted {
+  color: var(--muted);
+}
+
+/* ====================================== */
+/* 制作物カード                             */
+/* ====================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+/* ====================================== */
+/* スキル（タグ風）                         */
+/* ====================================== */
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chips li {
+  background: var(--pink-light);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  box-shadow: 0 3px 6px var(--shadow);
+}
+
+/* ====================================== */
+/* フッター                                 */
+/* ====================================== */
+.site-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--muted);
+}
+
+/* ====================================== */
+/* スマホ表示対応                           */
+/* ====================================== */
+@media (max-width: 720px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    margin-top: 10px;
+  }
+}
